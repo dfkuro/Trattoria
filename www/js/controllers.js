@@ -2,9 +2,9 @@ angular.module('starter.controllers', [])
 
 
 /*****************************************************
-* > Factory para los vinos
-*  Creamos nuestro servicio que sera responsable de obtener los datos
-*  creamos nuestro servicio
+* > Factory (Wines)
+*  Get wines from the API REST on wordpress.
+*  
 *******************************************************/
 .factory('vinosFactory', function(){
      
@@ -55,8 +55,8 @@ angular.module('starter.controllers', [])
 })
 
 /*
-* > Factory de categorias
-* Obtenemos los datos de nuestra API REST de wordpress para mostrar  las categorias
+* > Factory (Category)
+* Get the categories from the API REST on wordpress.
 */
 .factory('categoriasFactory', function(){
      
@@ -73,7 +73,7 @@ angular.module('starter.controllers', [])
 
 /*********************************************
 *
-* > Controller para 
+* > Controller for login
 *
 *********************************************/
 
@@ -112,7 +112,7 @@ angular.module('starter.controllers', [])
 
 /*********************************************
 *
-* > Controller para categorias
+* > Controller for categories
 *
 *********************************************/
 
@@ -125,7 +125,7 @@ angular.module('starter.controllers', [])
 
 /*********************************************
 *
-* > Controller para Vinos (muestra vinos de categoria elegida)
+* > Controller for wines (Vinos)
 *
 *********************************************/
 
@@ -133,24 +133,24 @@ angular.module('starter.controllers', [])
     function($scope, $filter, $log, $rootScope, filterFilter,  $stateParams, vinosFactory) {
   
   
-  $scope.vinos = vinosFactory.datosFactoria; // Obtenemos todos nuestros elementos de la factoria
-  filterFilter = $filter('filter');   // Iniciamos el tipo de filter
-  $scope.vinos = filterFilter($scope.vinos, $stateParams.categoria, false); // Hacemos un filtrado de los datos con respecto a la categoria seleccionada.
+  $scope.vinos = vinosFactory.datosFactoria; // Get all elements from wines factory.
+  filterFilter = $filter('filter');   // Init filter
+  $scope.vinos = filterFilter($scope.vinos, $stateParams.categoria, false); // Filter the data using the category given.
 
-  $scope.search = {}; // Creamos un nuevo objeto que almacenara los resultados de las busquedas.
+  $scope.search = {}; // Create a new object to store the data from search.
 
   if($scope.vinos.length > 4){
 
-    $scope.vinosScroll = $scope.vinos.slice(0,3); // Pre-llenamos nuestro array que funcionara en el infinite scroll
-    var counter = 3;  // Iniciamos un contador
-    $scope.noMoreItemsAvailable = false; // Creamos una bandera para detener el infinite Scroll
+    $scope.vinosScroll = $scope.vinos.slice(0,3); // Pre-fill vinosScroll to work with infinit scroll
+    var counter = 3;  // Counter init.
+    $scope.noMoreItemsAvailable = false; // variable to infinit scroll
 
   } else {
 
       $scope.vinosScroll = $scope.vinos
       counter = 0;
       $scope.filtered = $scope.vinosScroll;
-      $scope.noMoreItemsAvailable = true; // Creamos una bandera para detener el infinite Scroll
+      $scope.noMoreItemsAvailable = true; // Flag to stop infinit scroll
 
   }
 
@@ -168,12 +168,6 @@ angular.module('starter.controllers', [])
 
   };
 
-  /*$scope.$on('$stateChangeSuccess', function() {
-    
-    $scope.loadMore();
-    
-  });*/
-
   $scope.filterItems = function() {
 
     $log.debug('Search: ' + $scope.search.vino);
@@ -186,7 +180,7 @@ angular.module('starter.controllers', [])
 
 /*********************************************
 *
-* > Controller para detalles del vino
+* > Controller for wine detail
 *
 *********************************************/
 
