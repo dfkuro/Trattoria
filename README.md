@@ -5,14 +5,14 @@ For now all images are hardcoded will be deleted.
 
 Plugins:
 
-com.ionic.keyboard
-cordova-plugin-crosswalk-webview
-cordova-plugin-whitelist
-*org.apache.cordova.console
-org.apache.cordova.device
-org.apache.cordova.splashscreen
+com.ionic.keyboard<br>
+cordova-plugin-crosswalk-webview<br>
+cordova-plugin-whitelist<br>
+*org.apache.cordova.console<br>
+org.apache.cordova.device<br>
+org.apache.cordova.splashscreen<br>
 
 Engine:
-cordova-android-c0.6.1
-cordova-crosswalk-engine-c0.7.1
-xwalk-webviews
+cordova-android-c0.6.1<br>
+cordova-crosswalk-engine-c0.7.1<br>
+xwalk-webviews<br>
