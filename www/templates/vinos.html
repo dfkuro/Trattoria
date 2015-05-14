@@ -1,0 +1,77 @@
+<ion-view view-title="Vinos">
+  <ion-content class="padding scroll-bg">
+   
+   
+    <div class="list">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" name="dfkuro" placeholder="Buscar Vino" ng-model="search.vino" ng-change="filterItems()" ng-minlength="2">
+      </label>
+    </div>
+    
+     
+    
+    <div   ng-repeat="vino in filtered "  >
+       <div class="row" ng-if="$even">
+
+        <div class="col col-50"  ng-if="$index < filtered.length" >
+          <div  href="" class="list card dfk-list-card">
+
+            <div class="item item-image">
+              <img src="{{filtered[$index].urlImage}}">
+            </div>
+
+            <div class="item item-avatar">
+              
+              <p class="nombreVino">{{filtered[$index].nombreVino}}</p>
+              <p>Nine Inch Nails</p>
+            </div>
+
+            <a class="item item-icon-right assertive " href="#/app/vino/{{filtered[$index].id}}" style="text-align: right;">
+              <i class="icon ion-arrow-right-b"></i>
+              Leer mas
+            </a>
+
+          </div>
+
+        </div>
+        
+        
+        
+        
+        
+        <div class="col col-50"  ng-if="$index + 1 < filtered.length" >
+
+          <div  href="" class="list card dfk-list-card">
+              
+            <div class="item item-image">
+              <img src="{{filtered[$index+1].urlImage}}">
+            </div>
+
+            <div class="item item-avatar">
+              
+              <p class="nombreVino">{{filtered[$index+1].nombreVino}}</p>
+              <p>Nine Inch Nails 2</p>
+            </div>
+
+            <a class="item item-icon-right assertive " href="#/app/vino/{{filtered[$index + 1].id}}" style="text-align: right;">
+              <i class="icon ion-arrow-right-b"></i>
+              Leer mas
+            </a>
+
+          </div>
+
+        </div>
+      
+      
+
+       </div>    
+    </div> <!-- End repeat -->
+     
+    <ion-infinite-scroll ng-if="!noMoreItemsAvailable"  on-infinite="loadMore()" distance="1%">
+    </ion-infinite-scroll>
+     
+  </ion-content>
+</ion-view>
+
+

@@ -1,0 +1,120 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+$big-bg:      '../img/fondo.png';
+$inicio-bg:   '../img/1.png';
+$acerca-bg:   '../img/2.png';
+
+/*.scroll-content{
+  background: url('http://ioniconf.com/img/bg.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
+
+.acerca-dfk{
+  background: url($acerca-bg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+
+.categorias-dfk{
+  background: url($big-bg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.center-content > * {
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+}
+
+.bar-title{
+  text-align: center;
+}
+
+.scroll-bg {
+  background: url($big-bg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+$opacity_global: .7;
+
+.dfk_default_change{
+  opacity: $opacity_global;
+}
+
+.dfk-list-card{
+  background: url($big-bg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.nombreVino{
+  color: #f25 !important;
+  font-size: 1.2em !important;
+  
+}
+
+.vino-descripcion-dfk{
+  padding: 20px;
+  font-size: 1.4em !important;
+  color: white;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.vino-image-dfk{
+  width: auto;
+  
+}
+
+.inicio-dfk{
+  background: url($inicio-bg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.vino-bg-dfk{
+  background: url($big-bg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+
+
+
+
+
